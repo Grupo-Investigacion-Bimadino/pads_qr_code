@@ -13,14 +13,18 @@ export class EventsService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} event`;
+    return `This action returns a #${id} events`;
   }
 
-  update(id: number, updateEventDto: UpdateEventDto) {
-    return `This action updates a #${id} event`;
+  update(id: number, updateComentDto: UpdateEventDto) {
+    return `This action updates a #${id} events`;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} event`;
+    return `This action removes a #${id} events`;
+  }
+
+  partialUpdate(id: number, updateComentDto: UpdateEventDto) {
+    return `This action partially updates a #${id} events`;
   }
 }
