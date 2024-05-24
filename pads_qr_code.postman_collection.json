@@ -1,0 +1,549 @@
+{
+	"info": {
+		"_postman_id": "761ffa2d-41fa-497f-a4bd-4888635139f6",
+		"name": "pads_qr_code",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34922058"
+	},
+	"item": [
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "events",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clasedesoftware\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primeraclase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "events",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clase_ddse\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primer_dia_de_clase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "events",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clase_ddse\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primer_dia_de_clase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "events",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000eventos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000eventos"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": \"1\", \r\n \"Hora\": \"7:23\", \r\n \"Fecha\": \"21-04-24\", \r\n \"asistencia\": \"si\",  \r\n \"id_usuario\": \"24\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logs",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": \"1\", \r\n \"Hora\": \"7:23\", \r\n \"Fecha\": \"21-04-24\", \r\n \"asistencia\": \"si\",  \r\n \"id_usuario\": \"24\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logs",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": \"1\", \r\n \"Hora\": \"7:15\", \r\n \"Fecha\": \"21-04-24\", \r\n \"asistencia\": \"si\",  \r\n \"id_usuario\": \"24\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logs",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clase_ddse\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primer_dia_de_clase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ticket",
+			"item": [
+				{
+					"name": "ticket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000eventos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000eventos"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Generador\": \"generar\",  \r\n \"pin\": \"1525\" ,\r\n \"id_eventos \": \"2\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Generador\": \"generar\",  \r\n \"pin\": \"1525\" ,\r\n \"id_eventos \": \"2\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Generador\": \"generar\",  \r\n \"pin\": \"1636\" ,\r\n \"id_eventos \": \"2\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clase_ddse\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primer_dia_de_clase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000eventos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000eventos"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"nombre de usuario\": \"pedrito2412\", \r\n \"rol\": \"docente\", \r\n \"identificacion\": \"113254367\", \r\n \"id_asistencia\": \"1\",  \r\n \"id_eventos\": \"3\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"nombre de usuario\": \"pedrito2412\", \r\n \"rol\": \"docente\", \r\n \"identificacion\": \"113254367\", \r\n \"id_asistencia\": \"1\",  \r\n \"id_eventos\": \"3\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clase_ddse\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primer_dia_de_clase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n \"Id\": 1, \r\n \"Nombre\": \"clase_ddse\", \r\n \"Hora\": \"6:51\", \r\n \"Fecha\": \"21-04-24\", \r\n \"Tipo\": \"clase\",  \r\n \"Descripcion\": \"primer_dia_de_clase\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/events/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

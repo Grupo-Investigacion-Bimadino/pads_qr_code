@@ -9,22 +9,62 @@ export class EventsService {
   }
 
   findAll() {
-    return `This action returns all events`;
+    return [{
+      
+        "Id": "1", 
+        "Nombre": "clase_ddse", 
+        "Hora": "6:51", 
+        "Fecha": "21-04-24", 
+        "Tipo": "clase",  
+        "Descripcion": "primer_dia_de_clase" 
+       
+    },
+  
+    { 
+      "Id": "2", 
+      "Nombre": "clase robotica", 
+      "Hora": "9:51", 
+      "Fecha": "24-05-24", 
+      "Tipo": "clase",  
+      "Descripcion": "clase arduino" 
+     },
+     { 
+      "Id": "3", 
+      "Nombre": "clase algoritmia", 
+      "Hora": "7:51", 
+      "Fecha": "26-04-24", 
+      "Tipo": "clase",  
+      "Descripcion": "introduccion html" 
+     }
+  
+  ];
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} events`;
+    return { 
+      "Id": "3", 
+      "Nombre": "clase algoritmia", 
+      "Hora": "7:51", 
+      "Fecha": "26-04-24", 
+      "Tipo": "clase",  
+      "Descripcion": "introduccion html" 
+     };
   }
 
-  update(id: number, updateComentDto: UpdateEventDto) {
-    return `This action updates a #${id} events`;
+  update(id: number, updateEventDto: UpdateEventDto) {
+    return  updateEventDto ;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} events`;
-  }
-
-  partialUpdate(id: number, updateComentDto: UpdateEventDto) {
-    return `This action partially updates a #${id} events`;
+    return {
+      
+      "Id": "1", 
+      "Nombre": "clase_ddse", 
+      "Hora": "6:51", 
+      "Fecha": "21-04-24", 
+      "Tipo": "clase",  
+      "Descripcion": "primer_dia_de_clase" 
+     
+  };
   }
 }
