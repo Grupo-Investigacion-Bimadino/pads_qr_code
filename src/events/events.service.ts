@@ -1,70 +1,36 @@
 import { Injectable } from '@nestjs/common';
 import { CreateEventDto } from './dto/create-event.dto';
 import { UpdateEventDto } from './dto/update-event.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Event } from './schemas/Event.schema';
 
 @Injectable()
 export class EventsService {
-  create(createEventDto: CreateEventDto) {
-    return CreateEventDto;
+  constructor(@InjectModel(Event.name) private eventModel: Model<Event>) {}
+
+  create(CreateEventDto: CreateEventDto) {
+    const createdEvent = new this.eventModel(CreateEventDto);
+    return createdEvent.save();
   }
 
   findAll() {
-    return [{
-      
-        "Id": "1", 
-        "Nombre": "clase_ddse", 
-        "Hora": "6:51", 
-        "Fecha": "21-04-24", 
-        "Tipo": "clase",  
-        "Descripcion": "primer_dia_de_clase" 
-       
-    },
-  
-    { 
-      "Id": "2", 
-      "Nombre": "clase robotica", 
-      "Hora": "9:51", 
-      "Fecha": "24-05-24", 
-      "Tipo": "clase",  
-      "Descripcion": "clase arduino" 
-     },
-     { 
-      "Id": "3", 
-      "Nombre": "clase algoritmia", 
-      "Hora": "7:51", 
-      "Fecha": "26-04-24", 
-      "Tipo": "clase",  
-      "Descripcion": "introduccion html" 
-     }
-  
-  ];
+    return this.eventModel.find().exec();
   }
 
-  findOne(id: number) {
-    return { 
-      "Id": "3", 
-      "Nombre": "clase algoritmia", 
-      "Hora": "7:51", 
-      "Fecha": "26-04-24", 
-      "Tipo": "clase",  
-      "Descripcion": "introduccion html" 
-     };
+  findOne(id: string) {
+    return this.eventModel.findById(id).exec();
   }
 
-  update(id: number, updateEventDto: UpdateEventDto) {
-    return  updateEventDto ;
+  update(id: string, UpdateEventDto: UpdateEventDto) {
+    return this.eventModel
+      .findByIdAndUpdate(id, UpdateEventDto, {
+        new: true,
+      })
+      .exec();
   }
 
-  remove(id: number) {
-    return {
-      
-      "Id": "1", 
-      "Nombre": "clase_ddse", 
-      "Hora": "6:51", 
-      "Fecha": "21-04-24", 
-      "Tipo": "clase",  
-      "Descripcion": "primer_dia_de_clase" 
-     
-  };
+  remove(id: string) {
+    return this.eventModel.findByIdAndDelete(id).exec();
   }
 }
