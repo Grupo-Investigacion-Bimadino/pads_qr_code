@@ -16,7 +16,12 @@ import { LogsModule } from './logs/logs.module';
 @Module({
   imports: [ ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
-    MongooseModule.forRoot(process.env.DB_URI),EventsModule, UsersModule, TicketModule, LogsModule],
+    MongooseModule.forRoot(process.env.DB_URI),
+     EventsModule,
+     UsersModule, 
+     TicketModule,
+    LogsModule,
+    ],
   controllers: [AppController],
   providers: [AppService],
 })
