@@ -10,21 +10,20 @@ import { AppService } from './app.service';
 import { EventsModule } from './events/events.module';
 import { UsersModule } from './users/users.module';
 import { TicketModule } from './ticket/ticket.module';
-import { LogsModule } from './logs/logs.module';
-
+// import { LogsModule } from './logs/logs.module';
 
 @Module({
-  imports: [ ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
+  imports: [
+    ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
     MongooseModule.forRoot(process.env.DB_URI),
-     EventsModule,
-     UsersModule, 
-     TicketModule,
-    LogsModule,
-    ],
+    EventsModule,
+    UsersModule,
+    TicketModule,
+    // LogsModule,
+  ],
+
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
-
-
