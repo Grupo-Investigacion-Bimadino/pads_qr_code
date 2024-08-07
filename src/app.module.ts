@@ -22,6 +22,7 @@ import { TicketModule } from './ticket/ticket.module';
     TicketModule,
     // LogsModule,
   ],
+
   controllers: [AppController],
   providers: [AppService],
 })
