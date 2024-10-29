@@ -16,7 +16,10 @@ import { TicketModule } from './ticket/ticket.module';
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
     ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
-    MongooseModule.forRoot(process.env.DB_URI),
+    // MongooseModule.forRoot(process.env.DB_URI),
+    MongooseModule.forRoot(
+      'mongodb+srv://aagamezibarra69:GFJuOQ7gUB6duFZI@cluster0.myaid.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+    ),
     EventsModule,
     UsersModule,
     TicketModule,
