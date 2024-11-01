@@ -11,6 +11,7 @@ import { EventsModule } from './events/events.module';
 import { UsersModule } from './users/users.module';
 import { TicketModule } from './ticket/ticket.module';
 // import { LogsModule } from './logs/logs.module';
+import { AttendenceController } from './attendence/attendence.controller';
 
 @Module({
   imports: [
@@ -26,7 +27,7 @@ import { TicketModule } from './ticket/ticket.module';
     // LogsModule,
   ],
 
-  controllers: [AppController],
+  controllers: [AppController, AttendenceController],
   providers: [AppService],
 })
 export class AppModule {}
