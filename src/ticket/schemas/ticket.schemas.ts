@@ -12,14 +12,9 @@ export class Message extends Document {
   @Prop()
   hora: string;
 
-  @Prop()
-  : string;
 
   @Prop()
   identificacion: string;
-
-  @Prop()
-  id: string;
 
   
 }

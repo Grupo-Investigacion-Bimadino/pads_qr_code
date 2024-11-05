@@ -15,8 +15,7 @@ export class Message extends Document {
   @Prop()
   asistencia: string;
 
-  @Prop()
-  id: string;
+  
 
   
 }
