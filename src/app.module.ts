@@ -12,6 +12,7 @@ import { UsersModule } from './users/users.module';
 import { TicketModule } from './ticket/ticket.module';
 // import { LogsModule } from './logs/logs.module';
 import { AttendenceController } from './attendence/attendence.controller';
+import { AttendenceModule } from './attendence/attendence.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { AttendenceController } from './attendence/attendence.controller';
     EventsModule,
     UsersModule,
     TicketModule,
+    AttendenceModule,
     // LogsModule,
   ],
 
