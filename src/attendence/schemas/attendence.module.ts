@@ -4,7 +4,7 @@ import { ChatController } from './chat.controller';
 import { ChatService } from './chat.service';
 // de aqui
 import { MongooseModule } from '@nestjs/mongoose';
-import { Message, MessageSchema } from './schemas/chatMessage.schema';
+import { attendence, attendenceSchema } from './schemas/attendenceSchema';
 // hasta aqui
 
 @Module({
