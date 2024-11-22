@@ -3,11 +3,11 @@ import { CreateAttendenceDto } from './dto/create-attendence.dto';
 import { UpdateAttendenceDto } from './dto/update-attendence.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { attendence } from './schemas/attendence.schemas';
+import { Attendence } from './schemas/attendence.schemas';
 
 @Injectable()
 export class AttendenceService {
-  constructor(@InjectModel(attendence.name) private attendenceModel: Model<attendence>) {}
+  constructor(@InjectModel(Attendence.name) private attendenceModel: Model<Attendence>) {}
   async create(createAttendenceDto: CreateAttendenceDto) {
     const createAttendence = new this.attendenceModel (createAttendenceDto);
 
@@ -16,18 +16,35 @@ export class AttendenceService {
   }
 
   findAll() {
-    return `This action returns all attendence`;
+    return this.attendenceModel.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} attendence`;
+  findOne(id: string) {
+    return this.attendenceModel.findById(id);
   }
 
-  update(id: number, updateAttendenceDto: UpdateAttendenceDto) {
-    return `This action updates a #${id} attendence`;
+  async update(id: string, updateAttendenceDto: UpdateAttendenceDto) {
+    try {
+      const updatattendence = await this.attendenceModel.findByIdAndUpdate(
+        id,
+        updateAttendenceDto,
+        { new:true } );
+
+      return updatattendence;
+    }
+    catch (e) {
+      console.error(e)
+    }
+    finally{
+      console.log('actualización finalizada.');
+    }
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} attendence`;
+  async remove(id: string) {
+    try {
+      const deletedattendence = await this.attendenceModel.findByIdAndDelete(id);
+      return deletedattendence;
+    }
+    finally{}
   }
 }

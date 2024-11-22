@@ -25,7 +25,7 @@ import { AttendenceModule } from './attendence/attendence.module';
     EventsModule,
     UsersModule,
     TicketModule,
-    AttendenceModule,
+   AttendenceModule,
     // LogsModule,
   ],
 
