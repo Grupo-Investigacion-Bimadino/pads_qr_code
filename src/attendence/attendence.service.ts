@@ -12,7 +12,8 @@ export class AttendenceService {
   ) {}
 
   create(createAttendenceDto: CreateAttendenceDto) {
-    return 'This action adds a new attendence';
+    const createAttendence = new this.attendenceModel(createAttendenceDto);
+    return createAttendence.save();
   }
 
   findAll() {
