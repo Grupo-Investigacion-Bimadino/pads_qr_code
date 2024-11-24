@@ -1,64 +1,36 @@
 import { Injectable } from '@nestjs/common';
 import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { Ticket } from './schemas/Ticket.schema';
 
 @Injectable()
 export class TicketService {
-  create(createTicketDto: CreateTicketDto) {
-    return createTicketDto;
+  constructor(@InjectModel(Ticket.name) private ticketModel: Model<Event>) {}
+
+  create(CreateTicketDto: CreateTicketDto) {
+    const createdTicket = new this.ticketModel(CreateTicketDto);
+    return createdTicket.save();
   }
 
   findAll() {
-    return [
-    { 
-      "Id": "1", 
-      "Hora": "6:51", 
-      "Fecha": "21-04-24", 
-      "Generador": "generar",  
-      "pin": "1525" ,
-      "id_eventos ": "2" 
-     },
-     { 
-      "Id": "2", 
-      "Hora": "8:51", 
-      "Fecha": "26-05-24", 
-      "Generador": "generar",  
-      "pin": "1825" ,
-      "id_eventos ": "4" 
-     },
-     { 
-      "Id": "3", 
-      "Hora": "9:51", 
-      "Fecha": "26-05-24", 
-      "Generador": "generar",  
-      "pin": "3625" ,
-      "id_eventos ": "4" 
-     }, ];
+    return this.ticketModel.find().exec();
   }
 
-  findOne(id: number) {
-    return { 
-      "Id": "3", 
-      "Hora": "9:51", 
-      "Fecha": "26-05-24", 
-      "Generador": "generar",  
-      "pin": "3625" ,
-      "id_eventos ": "4" 
-     } ;
+  findOne(id: string) {
+    return this.ticketModel.findById(id).exec();
   }
 
-  update(id: number, updateTicketDto: UpdateTicketDto) {
-    return updateTicketDto;
+  update(id: string, UpdateTicketDto: UpdateTicketDto) {
+    return this.ticketModel
+      .findByIdAndUpdate(id, UpdateTicketDto, {
+        new: true,
+      })
+      .exec();
   }
 
-  remove(id: number) {
-    return  { 
-      "Id": "2", 
-      "Hora": "8:51", 
-      "Fecha": "26-05-24", 
-      "Generador": "generar",  
-      "pin": "1825" ,
-      "id_eventos ": "4" 
-     };
+  remove(id: string) {
+    return this.ticketModel.findByIdAndDelete(id).exec();
   }
 }
