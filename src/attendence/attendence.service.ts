@@ -8,43 +8,29 @@ import { Attendence } from './schemas/attendence.schemas';
 @Injectable()
 export class AttendenceService {
   constructor(@InjectModel(Attendence.name) private attendenceModel: Model<Attendence>) {}
+  
   async create(createAttendenceDto: CreateAttendenceDto) {
     const createAttendence = new this.attendenceModel (createAttendenceDto);
-
-    const results = await createAttendence.save()
-    return results
+    return   createAttendence.save();
   }
 
   findAll() {
-    return this.attendenceModel.find();
+    return this.attendenceModel.find().exec();
   }
 
   findOne(id: string) {
-    return this.attendenceModel.findById(id);
+    return this.attendenceModel.findById(id).exec();
   }
 
   async update(id: string, updateAttendenceDto: UpdateAttendenceDto) {
-    try {
-      const updatattendence = await this.attendenceModel.findByIdAndUpdate(
-        id,
-        updateAttendenceDto,
-        { new:true } );
-
-      return updatattendence;
+    return this.attendenceModel
+      .findByIdAndUpdate(id, UpdateAttendenceDto, {
+        new: true,
+      })
+      .exec();
     }
-    catch (e) {
-      console.error(e)
-    }
-    finally{
-      console.log('actualización finalizada.');
+   
+    remove(id: string) {
+      return this.attendenceModel.findByIdAndDelete(id).exec();
     }
   }
-
-  async remove(id: string) {
-    try {
-      const deletedattendence = await this.attendenceModel.findByIdAndDelete(id);
-      return deletedattendence;
-    }
-    finally{}
-  }
-}
