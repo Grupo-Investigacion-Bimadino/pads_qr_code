@@ -3,7 +3,7 @@ import { CreateTicketDto } from './dto/create-ticket.dto';
 import { UpdateTicketDto } from './dto/update-ticket.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Ticket } from './schemas/Ticket.schema';
+import { Ticket } from './schemas/ticket.schemas';
 
 @Injectable()
 export class TicketService {
