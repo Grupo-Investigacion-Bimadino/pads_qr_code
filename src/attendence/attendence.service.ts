@@ -5,13 +5,16 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Attendence } from './schemas/attendence.schemas';
 
+
 @Injectable()
 export class AttendenceService {
-  constructor(@InjectModel(Attendence.name) private attendenceModel: Model<Attendence>) {}
-  
-  async create(createAttendenceDto: CreateAttendenceDto) {
-    const createAttendence = new this.attendenceModel (createAttendenceDto);
-    return   createAttendence.save();
+  constructor(
+    @InjectModel(Attendence.name) private attendenceModel: Model<Attendence>,
+  ) {}
+
+  create(createAttendenceDto: CreateAttendenceDto) {
+    const createAttendence = new this.attendenceModel(createAttendenceDto);
+    return createAttendence.save();
   }
 
   findAll() {
@@ -22,15 +25,16 @@ export class AttendenceService {
     return this.attendenceModel.findById(id).exec();
   }
 
-  async update(id: string, updateAttendenceDto: UpdateAttendenceDto) {
+  update(id: string, UpdateAttendenceDto: UpdateAttendenceDto) {
     return this.attendenceModel
       .findByIdAndUpdate(id, UpdateAttendenceDto, {
         new: true,
       })
       .exec();
-    }
-   
-    remove(id: string) {
-      return this.attendenceModel.findByIdAndDelete(id).exec();
-    }
   }
+
+  remove(id: string) {
+    return this.attendenceModel.findByIdAndDelete(id).exec();
+
+  }
+}

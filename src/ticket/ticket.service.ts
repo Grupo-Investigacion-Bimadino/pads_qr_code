@@ -7,7 +7,7 @@ import { Ticket } from './schemas/ticket.schemas';
 
 @Injectable()
 export class TicketService {
-  constructor(@InjectModel(Ticket.name) private ticketModel: Model<Event>) {}
+  constructor(@InjectModel(Ticket.name) private ticketModel: Model<Ticket>) {}
 
   create(CreateTicketDto: CreateTicketDto) {
     const createdTicket = new this.ticketModel(CreateTicketDto);
