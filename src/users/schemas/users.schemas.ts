@@ -1,8 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
+// Define la clase para el esquema de Users
 @Schema({ timestamps: true })
-export class Message extends Document {
+export class Users extends Document {
   @Prop()
   nombre: string;
 
@@ -13,4 +14,6 @@ export class Message extends Document {
   identificacion: string;
 }
 
-export const MessageSchema = SchemaFactory.createForClass(Message);
+// Genera el esquema de Mongoose a partir de la clase Users
+export const UsersSchema = SchemaFactory.createForClass(Users);
+
