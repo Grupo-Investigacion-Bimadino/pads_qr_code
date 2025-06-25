@@ -1,34 +1,37 @@
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-
-import { ConfigModule } from '@nestjs/config';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { MongooseModule } from '@nestjs/mongoose';
-import { join } from 'path';
-
 import { AppService } from './app.service';
-import { EventsModule } from './events/events.module';
-import { UsersModule } from './users/users.module';
-import { TicketModule } from './ticket/ticket.module';
-// import { LogsModule } from './logs/logs.module';
-// import { AttendenceController } from './attendence/attendence.controller';
-import { AttendenceModule } from './attendence/attendence.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
+import { RolesDeUsuarioModule } from './roles_de_usuario/roles_de_usuario.module';
+import { EventoModule } from './eventos/eventos.module';
+import { CodigoQrModule } from './codigo_qr/codigo_qr.module';
+import { ConfiguracionDeEventoModule } from './configuracion_de_eventos/configuracion_de_eventos.module';
+import { ComentariosModule } from './comentarios/comentarios.module';
+import { RegistroDeAsistenciaModule } from './registro_de_asistencia/registro_de_asistencia.module';
+import { GeolocalizacionModule } from './geolocalización/geolocalización.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
-    ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'client') }),
-    // MongooseModule.forRoot(process.env.DB_URI),
-    MongooseModule.forRoot(
-      'mongodb+srv://aagamezibarra69:GFJuOQ7gUB6duFZI@cluster0.myaid.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
-    ),
-    EventsModule,
-    UsersModule,
-    TicketModule,
-   AttendenceModule,
-    // LogsModule,
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: '1215',
+      database: 'qr',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+    }),
+    CodigoQrModule,
+    ComentariosModule,
+    ConfiguracionDeEventoModule,
+    EventoModule,
+    GeolocalizacionModule,
+    RegistroDeAsistenciaModule,
+    RolesDeUsuarioModule,
+    UsuariosModule,
   ],
-
   controllers: [AppController],
   providers: [AppService],
 })
